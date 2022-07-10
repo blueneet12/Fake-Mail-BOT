@@ -29,7 +29,7 @@
     "stack": "heroku-22",
     "buildpacks": [
         {
-         "url": "heroku/python"
+         "url": "https://buildpack-registry.s3.amazonaws.com/buildpacks/heroku/python.tgz"
         }
     ],
     "formation": {
