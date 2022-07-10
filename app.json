@@ -2,6 +2,7 @@
     "name": "Fake-Mail Gen BOT",
     "description": "Fake Mail gen bot",
     "repository": "https://github.com/szteambot",
+    "logo": "https://www.herokucdn.com/deploy/button.png"
     "keywords": [
         "Bot",
         "Telegram ",
