@@ -26,10 +26,10 @@
             "required": true
         }
     },
-    "stack": "heroku-22",
+    "stack": "heroku-20",
     "buildpacks": [
         {
-         "url": "https://buildpack-registry.s3.amazonaws.com/buildpacks/heroku/python.tgz"
+         "url": 'heroku/python'
         }
     ],
     "formation": {
