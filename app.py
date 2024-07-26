@@ -41,12 +41,13 @@ I can create **temp emails** for you. Send /new to **create new mail** !
 
 **Advantages**
    • None Blacklisted Domains(Fresh Domains).
-   • [API](https://www.1secmail.com/api/v1/) base Email box .
+   • 100% [API](https://www.1secmail.com/api/v1/) base Email box .
    • 24 hours Active (paid hosting).
-
+   • We Won't Logging Anything. Thus we respect your privacy
+   
 Send /domains to get list of Available Domains.
 
-**Developer** : @ImDenuwan | @szteambots 
+**Developer** : @Appuz_007 | @botio_devs
 """
 
 CHANNEL_ID = "-1002054575318"
@@ -56,13 +57,10 @@ OWNER = 6883997969
 start_button = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("👥 Group", url="https://t.me/slbotzone"),
-                    InlineKeyboardButton("🗣 Channel", url="https://t.me/szteambots")
+                    InlineKeyboardButton("Update Channel", url="https://t.me/botio_devs"),
+                    InlineKeyboardButton("Support Group", url="https://t.me/botio_devs_discuss")
                 ],
-		        [
-                    InlineKeyboardButton("➕Add to Group ➕", url=f"http://t.me/szFakeMailBot?startgroup=new"),
-                ]    
-            ]
+	    ]
 )
 
 @app.on_message(filters.command("start"))
@@ -70,13 +68,16 @@ async def start(_, message: Message):
     try:
        await message._client.get_chat_member(CHANNEL_ID, message.from_user.id)
     except UserNotParticipant:
+	create = InlineKeyboardMarkup(
+            [[InlineKeyboardButton("Join", url="https://t.me/botio_devs")]])
        await app.send_message(
 			chat_id=message.from_user.id,
+	                reply_markup=create
 			text=f"""
 🚧 **Access Denied** {message.from_user.mention}
 You must,
 🔹[join Our Telegram Channel](https://t.me/{CHANNEL}).
-@szteambots
+@szteambots,
 """)
        return
     name = message.from_user.id
@@ -100,7 +101,7 @@ API3='https://www.1secmail.com/api/v1/?action=readMessage&login='
 #********************************************************************************
 
 create = InlineKeyboardMarkup(
-            [[InlineKeyboardButton("SZ team bots 🇱🇰", url="https://t.me/szteambots")]])
+            [[InlineKeyboardButton(".io Devs", url="https://t.me/botio_devs")]])
 
 #********************************************************************************
 @app.on_message(filters.command("new"))
@@ -118,7 +119,8 @@ async def fakemailgen(_, message: Message):
 **📬Done,Your Email Address Created!**
 📧 **Email** : `{email}@{domain}`
 📨 **Mail BOX** : `empty`
-**Powered by** : @szteambots """,
+
+**Powered by** : @botio_devs""",
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("♻️ Update Mail BOX ♻️", callback_data = f"mailbox |{email}|{domain}")]]))
     pi = await mes.pin(disable_notification=True, both_sides=True)
     await m.delete()
@@ -158,7 +160,8 @@ async def mail_box(_, query : CallbackQuery):
 **📬Done,Your Email Address Created!**
 📧 **Email** : `{smail}`
 📨 **Mail BOX** : ✅
-**Powered by** : @szteambots""",
+
+**Powered by** : @botio_devs""",
 reply_markup = mbutton
 )   
         except bad_request_400.MessageNotModified as e:
@@ -194,9 +197,14 @@ async def mail_box(_, query : CallbackQuery):
         )
         await query.message.edit(f""" 
 **From:** `{froms}`
-**Subject:** `{subject}`   
+
+**Subject:** `{subject}`
+
 **Date**: `{date}`
-{text}
+
+**Mail**: {text}
+
+**join @botio_devs**
 """,
 reply_markup = mbutton
 )
@@ -211,9 +219,12 @@ reply_markup = mbutton
         )
         await query.message.edit(f""" 
 **From:** `{froms}`
-**Subject:** `{subject}`   
+
+**Subject:** `{subject}` 
+
 **Date**: `{date}`
-{body}
+
+**Mail:** {body}
 """,
 reply_markup = mbutton
 )
