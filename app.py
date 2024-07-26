@@ -29,9 +29,9 @@ from database import (
 
 app = Client(
     "Fake_mail_bot",
-    api_hash= os.environ["API_HASH"],
-    api_id= int(os.environ["API_ID"]),
-    bot_token=os.environ["BOT_TOKEN"]
+    api_hash = "f8a1b21a13af154596e2ff5bed164860",
+    api_id= 10471716,
+    bot_token = "6916875347:AAEVxR4cO_sIBB6V57ANA92pHKxzw9G3yX0"
 )
 
 #********************************************************************************
