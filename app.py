@@ -31,7 +31,7 @@ app = Client(
     "Fake_mail_bot",
     api_hash = "f8a1b21a13af154596e2ff5bed164860",
     api_id= 10471716,
-    bot_token = "6916875347:AAEVxR4cO_sIBB6V57ANA92pHKxzw9G3yX0"
+    bot_token = "7362057028:AAGhliIlnrRK5kTyt_se28pTQPlY8IimG9Q"
 )
 
 #********************************************************************************
