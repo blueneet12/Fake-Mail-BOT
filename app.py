@@ -36,18 +36,19 @@ app = Client(
 
 #********************************************************************************
 start_text = """
-Hello! {}, 
+Hello! {} 😍✌️, 
 I can create **temp emails** for you. Send /new to **create new mail** !
 
 **Advantages**
-   • None Blacklisted Domains(Fresh Domains).
-   • 100% [API](https://www.1secmail.com/api/v1/) base Email box .
-   • 24 hours Active (paid hosting).
-   • We Won't Logging Anything. Thus we respect your privacy
+   • None Blacklisted Domains(Fresh Domains) ❄️.
+   • 100% [API](https://www.1secmail.com/api/v1/) base Email box 😊.
+   • 24 hours Active (paid hosting) 🙂🤞.
+   • We Won't Logging Anything. Thus we respect your privacy 🤗.
    
 Send /domains to get list of Available Domains.
+Send /new to create your Temp-Mail
 
-**Developer** : @Appuz_007 | @botio_devs
+**Developer** : 👑 @Appuz_007 | 🏰 @botio_devs
 """
 
 CHANNEL_ID = "-1002054575318"
