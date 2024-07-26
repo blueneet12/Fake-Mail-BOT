@@ -67,33 +67,38 @@ start_button = InlineKeyboardMarkup(
 @app.on_message(filters.command("start"))
 async def start(_, message: Message):
     try:
-       await message._client.get_chat_member(CHANNEL_ID, message.from_user.id)
+        await message._client.get_chat_member(CHANNEL_ID, message.from_user.id)
     except UserNotParticipant:
-	create = InlineKeyboardMarkup(
-            [[InlineKeyboardButton("Join", url="https://t.me/botio_devs")]])
-       await app.send_message(
-			chat_id=message.from_user.id,
-	                reply_markup=create
-			text=f"""
+        create = InlineKeyboardMarkup(
+            [[InlineKeyboardButton("Join", url="https://t.me/botio_devs")]]
+        )
+        await app.send_message(
+            chat_id=message.from_user.id,
+            reply_markup=create,
+            text=f"""
 🚧 **Access Denied** {message.from_user.mention}
 You must,
 🔹[join Our Telegram Channel](https://t.me/{CHANNEL}).
 @szteambots,
-""")
-       return
+"""
+        )
+        return
+
     name = message.from_user.id
     if message.chat.type != "private":
-       await app.send_message(
-        name,
-        text = start_text.format(message.from_user.mention),
-        reply_markup = start_button)
-       return await add_served_chat(message.chat.id) 
+        await app.send_message(
+            name,
+            text=start_text.format(message.from_user.mention),
+            reply_markup=start_button
+        )
+        return await add_served_chat(message.chat.id)
     else:
         await app.send_message(
-    name,
-    text = start_text.format(message.from_user.mention),
-    reply_markup = start_button)
-    return await add_served_user(message.from_user.id) 
+            name,
+            text=start_text.format(message.from_user.mention),
+            reply_markup=start_button
+        )
+        return await add_served_user(message.from_user.id)
     
 #********************************************************************************
 API1='https://www.1secmail.com/api/v1/?action=getDomainList'
