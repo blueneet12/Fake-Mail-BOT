@@ -75,11 +75,13 @@ async def start(_, message: Message):
         await app.send_message(
             chat_id=message.from_user.id,
             reply_markup=create,
+	    disable_web_page_preview=True,
             text=f"""
 🚧 **Access Denied** {message.from_user.mention}
 You must,
-🔹[join Our Telegram Channel](https://t.me/{CHANNEL}).
-@szteambots,
+
+🔹[join Our Telegram Channel](https://t.me/{CHANNEL}) 😅👇.
+
 """
         )
         return
