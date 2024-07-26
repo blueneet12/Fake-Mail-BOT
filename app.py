@@ -49,9 +49,9 @@ Send /domains to get list of Available Domains.
 **Developer** : @ImDenuwan | @szteambots 
 """
 
-CHANNEL_ID = int(os.environ['CHANNEL_ID'])
-CHANNEL = os.environ['CHANNEL']
-OWNER = int(os.environ['OWNER'])
+CHANNEL_ID = "-1002054575318"
+CHANNEL = "botio_devs"
+OWNER = 6883997969
 
 start_button = InlineKeyboardMarkup(
             [
